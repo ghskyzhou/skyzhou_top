@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript">
+function file(){
+
+var fso;
+try { 
+fso=new ActiveXObject("Scripting.FileSystemObject"); 
+
+} catch (e) { 
+alert("当前浏览器不支持");
+return;
+} 
+
+alert("方法已执行2");
+var f1 = fso.createtextfile("C:/1.txt",true);
+f1.write("这是一个文本文档");  
+var openf1 = fso.OpenTextFile("1.txt");
+
+str = openf1.ReadLine();
+alert("里面的内容为'" + str + "'");
+
+
+}
+</script>
+</head>
+<body>
+<button onclick='file()'>创建一个文本文件</button>
+</body>
+<html>

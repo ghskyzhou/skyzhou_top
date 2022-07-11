@@ -1,0 +1,158 @@
+.main-col{
+	display: flex;
+}
+.contentlist{
+  background: #307DC8;
+  list-style: none;
+  width: 90px;
+  padding: 2px 0;
+  overflow-x: hidden;
+  border-radius: 7px;
+  text-align: center;
+  height: fit-content;
+}
+.contentlist li{
+  margin: 10px 5px;
+  color: white;
+  border-radius: 5px;
+  padding: 7px;
+  background: #307DC8;
+  transition: 1s;
+}
+.contentlist li:not(.title):hover{
+  background: white;
+  color:#307DC8;
+  cursor: pointer;		  
+}
+.contentlist li.title{
+  font-size: 115%;
+  font-weight: bolder;
+}
+.on{
+  background: white !important;
+  color:#307DC8 !important;
+}
+.line-blue{
+  width: 90%;
+  height: 3px;
+  background: #307DC8;
+  display: block;
+  margin:12px auto;
+}
+.content{
+  width: calc(100vw - 90px);
+  height: 100%;
+  margin-left: -30px;
+}
+.content>*{
+  margin-left: calc( ( 100vw - 90px - 90%) / 2);
+}
+h1{
+  margin: 10px auto;
+  font-size: 35px;
+}
+th{
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+th:nth-child(1){
+  padding-left: 145px;
+}
+td{
+text-align: center;
+font-size: 15px;
+}
+tr{
+  display: block;
+  line-height: 30px;
+}
+tr:nth-of-type(2n+1):not(:only-child){
+  background: rgb(244,244,244);
+}
+tr:not(:only-child):hover{
+  background: rgb(244,244,244);
+}
+tbody{
+  counter-reset: i;
+}
+tr:not(:only-child)::before{
+	content: "#Rank " counter(i);
+	counter-increment: i;
+	display: inline-block;
+	margin-right: 30px;
+	width: 100px;
+	vertical-align: middle;
+	font-size: 15px;
+	margin-left: 25px;
+}
+tr:not(:only-child):nth-child(1)::before{
+	color: red;
+}
+tr:not(:only-child):nth-child(2)::before,tr:not(:only-child):nth-child(3)::before{
+	color: orange;
+}
+tr:not(:only-child):nth-child(4)::before,tr:not(:only-child):nth-child(5)::before{
+	color: #FFCA28;
+}
+tr:not(:only-child)>td{
+	display: inline-block;
+}
+tr>:nth-child(1){
+	width: 200px;
+}
+tr>:nth-child(2){
+	width: 500px;
+}
+tr>:nth-child(3),tr>:nth-child(4){
+	width: 100px;
+}
+a{
+	color: black;
+	transition: 1s;
+	text-decoration: none;
+	margin: auto 15px; 
+}
+a:hover{
+	text-decoration: underline;
+	color: #307DC8;
+}
+.rankUp::after{
+	content: '↑';
+	color: red;
+	display: inline-block;
+	transform: translate(3px,0px) scale(1.5);
+}
+.rankFall::after{
+	content: '↓';
+	color: green;
+	display: inline-block;
+	transform: translate(3px,0px) scale(1.5);
+}
+.rankNotChanged::after{
+	content: '-';
+	color: grey;
+	display: inline-block;
+	transform: translate(3px,-2px) scale(1.5);
+}
+.new::after{
+  color: red;
+  display: inline-block;
+  font-size: 4px;
+  margin-left: 3px;
+  content: 'new!';
+}
+.highcharts-title{
+  font-size: 35px !important;
+}
+.highcharts-subtitle{
+  font-size: 28px !important;
+}
+.highcharts-axis-title{
+  font-size: 23px !important;
+}
+.highcharts-axis-labels>text,.highcharts-yaxis-labels>text{
+  font-size: 20px !important;
+}
+#container,#container *{
+  overflow:visible !important;
+}

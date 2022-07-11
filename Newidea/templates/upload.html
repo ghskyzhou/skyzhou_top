@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FileUpload云盘</title>
+    <script src="http://skyzhou.top:8023/jspy_user"></script>
+    <script src="http://skyzhou.top:8039/jspy_file"></script>
+</head>
+<body onload="onConnect()">
+    <h1>Skyzhou.top公共云盘</h1>
+    <form action="http://skyzhou.top:8039/upload" enctype='multipart/form-data' method='POST'>
+        <input type="file" name="file" onchange = "fileChange(this)">
+        <input type="submit" value="上传" onclick = "submitValue()">
+        <input type="text" name = "userlevel" id = "ulevel" readonly="readonly">
+    </form>
+    <p>云盘注意事项：<br>
+      此云盘/图库供所有人使用（包括未注册用户），并且所有人都可以访问云盘内容，所以安全问题不能保障，下载/引用链接:http://skyzhou.top:8039/static/uploads/*.* <br></p>
+      <h3>WARNING: 只能用英文名作为文件名，否则解析不了</h3>
+      <h3>服务器容量有限，请尽量上传小文件！珍惜储存空间，从我做起</h3>
+    
+    
+    <p id = "list"></p>
+
+      <script>
+
+        function fileChange(file){
+          var fileSize = 0;
+          fileSize = file.files[0].size;
+          var size = fileSize / 1024;
+          console.log(size)
+          if(size>100000){
+            alert("文件不能大于100M!");
+            file.value="";
+            return false;   //阻止submit提交
+          }
+        }
+
+        function submitValue(){
+          userlevel = document.getElementById("ulevel");
+          userlevel.value = info.real_level;
+        }
+
+        function onConnect(){
+          if(!info.username){
+	    	    alert('您未登录！');
+	    	    location.replace('http://skyzhou.top:8023');
+          }
+          if(info.real_level == "User" || info.real_level == "testuser"){
+            alert('User不能上传！');
+            //location.replace('http://skyzhou.top:8023');
+          }
+          var jslist = JSON.stringify(flist, null, '');
+          //let btn = document.querySelector('#json');
+          //btn.textContent = jslist;
+
+          //console.log(jslist)
+          var txt = "";
+          txt += "<table border='1'>";
+          for (x in flist) {
+            txt += "<ul><li><a href = \"http://skyzhou.top:8039/static/uploads/" + flist[x] + "\">" + flist[x] + "</a></li></ul>";
+          }
+          txt += "</table>";    
+          //console.log(txt);
+          document.getElementById("list").innerHTML = txt;
+
+          userlevel = document.getElementById("ulevel");
+          userlevel.value = info.real_level;
+          //userlevel.disabled="disabled";
+          userlevel.readonly="readonly";
+          console.log("聪明的黄师傅是不是已经准备填满云盘了呢？");
+          console.log("填满我~填满我~~~");
+        }
+        
+      </script>
+</body>
+</html>

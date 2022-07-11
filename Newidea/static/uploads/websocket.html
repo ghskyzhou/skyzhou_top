@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <title>test</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+      <script type="text/javascript">
+         function WebSocketTest()
+         {
+            if ("WebSocket" in window)
+            {
+                var sid = document.getElementsByName("stopid")[0].value;
+                console.log(sid);
+                ws.emit('web event',Number(sid), 'asdfasdf', 'asdgggggf');
+            }
+            
+            else
+            {
+               // 浏览器不支持 WebSocket
+               alert("您的浏览器不支持 WebSocket!");
+            }
+         }
+         function onData(urldata)
+         {
+             console.log(urldata);
+         }
+         var ws=io('http://skyzhou.top:8028',{translates:['websoket']});
+         ws.on('url response', onData);
+      </script>
+        
+   </head>
+   <body>
+   
+      <div id="sse">
+         <a href="javascript:WebSocketTest()">运行 WebSocket</a>
+         <input type = "text" name = "stopid">
+      </div>
+      
+   </body>
+</html>

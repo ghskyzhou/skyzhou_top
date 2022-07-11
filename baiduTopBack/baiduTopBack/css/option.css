@@ -1,0 +1,102 @@
+.line{
+	display: block;
+	margin: 10px auto;
+	margin-left: 30px;
+	width: 90%;
+	height: 3px;
+	background: #307DC8;
+}
+.main>*{
+	margin-left: 30px;
+}
+h1{
+	font-size: 30px;
+}
+input,.input{
+	color: #307DC8;
+	border:none;
+	background: white;
+	width: 180px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	outline: none;
+	padding: 2px 4px;
+	text-align: left;
+	overflow: hidden;
+	width: auto;
+	border-bottom: 2px solid #7ee1ff;	
+	font-size: 20px;		
+}
+.input{
+	font-size: 15px;
+	height: 26px;
+}
+.setting{
+	color: #307DC8;
+	font-size: 20px;
+	list-style: none;
+}
+h5{
+	margin:2px;
+	margin-left: 30px;
+}
+.setting>li{
+	height: 30px;
+	overflow: hidden;
+	transition: 1s;
+	margin: 10px auto;
+}
+.setting>li:hover{
+	height: 60px;
+}
+.on{
+	background: #7ee1ff;
+	color: white;
+	border-radius: 3px;
+	padding:3px;
+	font-size: 15px;
+	vertical-align: middle;
+}
+.choose span{
+	transition: 1s;
+}
+.btn{
+	background: #307DC8;
+	color: white;
+	padding: 7px;
+	border-radius: 5px;
+	border:none;
+	outline: none;
+	transition: 1s;
+	cursor: pointer;
+	font-size: 15px;
+}
+.btn:hover{
+	background: #71a8de;
+}
+.btn:first-of-type{
+	margin-left: 70px;
+	display: inline-block;
+}
+.main:last-child{
+	margin-left: 50px;
+}
+.main{
+	display: inline-block;
+	vertical-align: top;
+	width: 47vw;
+}
+body{
+	display: flex;
+}
+.op{
+	color: #307DC8;
+	text-decoration: none;
+	transition: 1s;
+	cursor: pointer;
+}
+.op:hover{
+	color: #7ee1ff;
+}

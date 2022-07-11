@@ -1,0 +1,71 @@
+.mark .block{
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	padding-left: 20px;
+	border-left: 4px solid grey;
+	background-color: lightgrey;
+	font-style: italic;
+	display: inline-block;
+	width: auto;
+}
+.mark .op{
+	color:#2ef2d8;
+}
+.mark .string{
+	color:#4865ff;
+}
+.mark .num{
+	color: #48ff48;
+}
+.mark .name{
+	color:orangered;
+}
+.mark .other{
+	color:yellow;
+}
+.mark .comment {
+	color: grey; 
+}
+.mark .comment span{
+	color: grey; 
+}
+.mark .keyword{
+	color: purple;
+	font-weight: bold;
+}
+.mark .keyword span{
+	color: purple;
+	font-weight: bold;
+}
+.mark code{
+	border-radius: 5px;
+	width: 60%;
+	background-color: white;
+	display: block;
+	padding: 5px;
+	font-family:'consolas';
+	background: black;
+	color: white;
+	width: auto;
+	margin: 10px;
+}
+.mark h1,.mark h2,.mark h3,.mark h4,.mark h5,.mark h6{
+	display: inline;
+}
+.mark p[data-inline='1'],.mark p[data-inline='1'] code{
+	display: inline;
+	padding: 1px;
+	margin: 1px;
+}
+.mark table,.mark table tr>*{
+	border: 1px solid #CCCCCC;
+	padding:5px 10px;
+}
+.mark table{
+	border-collapse: collapse;
+	margin: auto;
+}
+.mark table tr:nth-child(even){
+	background-color: rgba(128,128,128,0.18);
+}

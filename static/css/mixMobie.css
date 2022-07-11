@@ -1,0 +1,50 @@
+:root{
+	font-size: 0.5em;
+}
+tr:not(:only-child)::before{
+	width: 40px;
+	margin-left: 5px;
+}
+th:nth-child(1) {
+    padding-left: 36px;
+}
+tr>:nth-child(1) {
+    width: 180px;
+}
+tr>:nth-child(2) {
+    width: 55px;
+}
+tr>:nth-child(3) {
+    width: 50px;
+}
+tr:not(:only-child)>td:nth-child(4){
+	width: 15px;
+	height: 15px;
+}
+tr:not(:only-child)>td:nth-child(4):before{
+	transform: translate(0px,-10px);
+}
+tr{
+	line-height: 35px;
+	height: 35px;
+}
+tr:not(:only-child)::before {
+	font-size: 0.5rem;
+}
+tr:not(:only-child){
+	padding-right: 0;
+}
+.new::after {
+	position: absolute;
+	transform: translate(-13px, -11px);
+}
+.content{
+	padding: 2px;
+}
+.contentlist span {
+	width: 80px;
+	font-size: 1.5rem;
+}
+.contentlist{
+	padding-left: 12px;
+}

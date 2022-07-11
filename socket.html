@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket demo</title>
+        <style type="text/css">
+            body {
+                font-family: "Courier New", sans-serif;
+                text-align: center;
+            }
+            .buttons {
+                font-size: 4em;
+                display: flex;
+                justify-content: center;
+            }
+            .button, .value {
+                line-height: 1;
+                padding: 2rem;
+                margin: 2rem;
+                border: medium solid;
+                min-height: 1em;
+                min-width: 1em;
+            }
+            .button {
+                cursor: pointer;
+                user-select: none;
+            }
+            .minus {
+                color: red;
+            }
+            .plus {
+                color: green;
+            }
+            .value {
+                min-width: 2em;
+            }
+            .state {
+                font-size: 2em;
+            }
+            h1{
+                margin-bottom: 10px;
+            }
+            .main{
+                height: 80vh;
+                width: auto;
+                border: 2px solid black;
+                border-radius: 3px;
+                padding: 5px;
+            }
+            .msg{
+                padding-bottom: 10px;
+                display: flex;
+            }
+            .user{
+                display: inline-block;
+                border-right: 1px solid grey;
+                width: 80px;
+                text-align: right;
+                padding-right: 3px;
+            }
+            .msgBody{
+                display: inline-block;
+                padding: 3px;
+                background: skyblue;
+                border-radius: 5px;
+                max-width: 70%;
+                margin-left: 3px;
+            }
+            .time{
+                flex: 10;
+                display: inline-block;
+                color: gray;
+                text-align: right;
+            }
+            .icon{
+                background: red;
+                border-radius: 3px;
+                font-size: small;
+                color: white;
+                height: 100%;
+                margin-right: 5px;
+            }
+            .icon-super{
+                background: red;
+            }
+            .icon-admin{
+                background: green;
+            }
+            .icon-user{
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="buttons">
+            <div class="minus button">-</div>
+            <div class="value">?</div>
+            <div class="plus button">+</div>
+        </div>
+        <div class="state">
+            <span class="users">?</span> online
+        </div>
+
+        <h1>Chat!</h1>
+        <div class="main" id="main">
+            <div class="msg">
+                <span class="user"><span class="icon icon-admin">超管</span>Yuckxi</span>
+                <span class="msgBody">Hello</span>
+                <span class="time">16:10</span>
+            </div>
+            <div class="msg">
+                <span class="user"><span class="icon icon-super">元首</span>Sky</span>
+                <span class="msgBody">Hello Yuckxi!</span>
+                <span class="time">16:10</span>
+            </div>
+            <div class="msg">
+                <span class="user"><span class="icon icon-user">User</span>test</span>
+                <span class="msgBody">This is a test!</span>
+                <span class="time">16:10</span>
+            </div>
+        </div>
+        <div class="send">
+            <input type="text" class="in" id="input">
+            <button class="sendBtn" onclick = sendmsg()>Send</button>
+        </div>
+
+
+        <script>
+            var minus = document.querySelector('.minus'),
+                plus = document.querySelector('.plus'),
+                value = document.querySelector('.value'),
+                users = document.querySelector('.users'),
+                sendbuttton = document.querySelector('.sendBtn'),
+                websocket = new WebSocket("ws://skyzhou.top:8066/");
+            minus.onclick = function (event) {
+                websocket.send(JSON.stringify({action: 'minus'}));
+            }
+            plus.onclick = function (event) {
+                websocket.send(JSON.stringify({action: 'plus'}));
+            }
+            websocket.onmessage = function (event) {
+                data = JSON.parse(event.data);
+                switch (data.type) {
+                    case 'state':
+                        value.textContent = data.value;
+                        break;
+                    case 'users':
+                        users.textContent = (
+                            data.count.toString() + " user" +
+                            (data.count == 1 ? "" : "s"));
+                        break;
+                    default:
+                        console.error(
+                            "unsupported event", data);
+                }
+            };
+
+            function makeNode(name,className,text){
+                var node=document.createElement(name);
+                node.className=className;
+                node.innerHTML=text;
+                return node;
+            }
+            function addMsg(option){
+                var user=option.user,msg=option.msg,icon=option.icon,time=option.time;
+                var contianer=document.getElementById('main');
+                var iconNode=makeNode('span','icon '+icon.type,icon.text);
+                var userNode=makeNode('span','user',(iconNode.outerHTML)+user);
+                var msgBodyNode=makeNode('span','msgBody',msg);
+                var timeNode=makeNode('span','time',time);
+                var ele=makeNode('span','msg','');
+                ele.append(userNode,msgBodyNode,timeNode);
+                contianer.append(ele);
+            }
+
+            function sendmsg(){
+                var intext = document.getElementById('input').value;
+                addMsg({user:'You', time:'Just Now', icon:{type:'icon-user', text:'user'}, msg: intext});
+            }
+        </script>
+    </body>
+</html>

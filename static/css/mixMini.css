@@ -1,0 +1,16 @@
+tr>:nth-child(3){
+	display: none !important;
+}
+tr:not(:only-child)::before{
+	content: "#" counter(i);
+	width: 30px;
+}
+a{
+	margin: auto -15px;
+}
+tr>:nth-child(1) {
+    width: 140px;
+}
+th:nth-child(1) {
+    padding-left: 30px;
+}

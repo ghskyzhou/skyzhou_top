@@ -1,0 +1,107 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Skyzhou.top</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+</head>
+  <body class="body">
+    <div class="bodystyle">
+      <h1 class="heading">Skyzhou.top</h1>
+      <div>
+        <div class="div-block-2"></div>
+      </div>
+      <div class="columns w-row">
+        <div class="w-col w-col-6">
+          <div>
+            <a href="http://skyzhou.top:8023/baidutop" class="button-3 w-button">BaiduTop百度风云榜</a>
+          </div>
+          <div class="div-block">
+            <a href="http://skyzhou.top:8026" class="w-button">Chatroom聊天室<br></a>
+          </div>
+          <div>
+            <a href="http://skyzhou.top:8039/2048" class="w-button">2048</a>
+          </div>
+          <div class =  "div-block">
+            <a href="http://skyzhou.top:8039/upload" class="w-button">FileUpload云盘/图库</a>
+          </div>
+          <div>
+            <a href="http://skyzhou.top:8039/solar" class="w-button">Solar System太阳系</a>
+          </div>
+          <div class = "div-block">
+            <a href="http://skyzhou.top:8028" class="w-button">VPN网页版</a>
+          </div>
+        </div>
+        <div class="w-col w-col-6">
+          <blockquote class="block-quote"><span class="text-span"><strong>公告栏<br><br></strong></span>
+            <div class="fold-box">
+              <p>欢迎大家来到Skyzhou.top，这是由服主Skyzhou和网页开发者YuckXi共同管理的一个网站，目前功能还不多，学业繁重，请谅解！<br>
+                目前的功能有：BaiduTop, Chatroom, 2048, FileUpload, Solar System, VPN<br>感谢投资者VictorYep和YuanXunGeJi等为服务器费用的重大贡献！<br>
+                <img src="http://skyzhou.top:8039/static/uploads/Peach.jpg" width = 200>
+                <img src="http://skyzhou.top:8039/static/uploads/furry.jpg" width = 200>
+                <img src="http://skyzhou.top:8039/static/uploads/furry2.jpg" width = 200>
+                <img src="http://skyzhou.top:8039/static/uploads/Kano.jpg" width = 200>
+                <br>
+                
+              </p>
+            </div>
+            <div class="fold-button">
+              <span class="open">展开</span>
+              <span class="close" style="display:none;">收起</span>
+            </div>
+            
+          </blockquote>
+        </div>
+        <a href="javascript:void(0)" class="button-2 w-button" onclick="logout()">Logout</a>
+      </div>
+      <div class = "medias">
+        <iframe src="//player.bilibili.com/player.html?aid=971338954&bvid=BV1zp4y1W7qf&cid=294929309&page=1" height = 360 width = 640 frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+        <iframe src="//player.bilibili.com/player.html?aid=544434789&bvid=BV1Ri4y1T7md&cid=312602844&page=1" height = 360 width = 640 frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+        <!-- img src="http://www.dmoe.cc/random.php" height = 360 weight = 640 -->
+      </div>
+      <br>
+    </div>
+    
+    
+  
+    
+    <script>
+      function Post(URL, PARAMTERS) {
+          //创建form表单
+          var temp_form = document.createElement("form");
+          temp_form.action = URL;
+          //如需打开新窗口，form的target属性要设置为'_blank'
+          temp_form.target = "_self";
+          temp_form.method = "post";
+          temp_form.style.display = "none";
+          //添加参数
+          for (var item in PARAMTERS) {
+              var opt = document.createElement("textarea");
+              opt.name = item;
+              opt.value = PARAMTERS[item];
+              temp_form.appendChild(opt);
+          }
+          var opt = document.createElement("input");
+          opt.type = "submit";
+          temp_form.appendChild(opt);
+          document.body.appendChild(temp_form);
+          //提交数据
+          temp_form.submit();
+      }
+      function logout()
+      {
+          var params = {
+              'username':'LOGOUT',
+              'password':'LOGOUT'
+          };
+          Post("http://skyzhou.top:8023/logintest", params);
+      }
+
+      $(function(){
+      $(".fold-button").click(function(){
+      $(".fold-box").slideToggle("slow");
+      $(".open").toggle();
+      $(".close").toggle();
+      });
+      });
+    </script>
+  </body>

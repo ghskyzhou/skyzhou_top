@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "BaiduTopHelper",
+  "version": "3.1",
+  "description": "Show Top on Baidu",
+  "icons": {
+      "16": "baidu.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "baidu.png"
+    },
+    "default_popup":"/page/popup.html",
+    "default_title": "百度风云榜"
+  },
+  "background":{
+    "scripts":[
+      "/js/background.js"
+    ]
+  },
+  "options_page": "/page/option.html",
+  "permissions": [
+    "*://*/*",
+    "background"
+  ]
+}

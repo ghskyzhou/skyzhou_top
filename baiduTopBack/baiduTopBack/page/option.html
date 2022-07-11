@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>更多</title>
+	<link rel="stylesheet" href="../css/option.css">
+	<script src="../js/option.js"></script>
+</head>
+<body>
+	<div class="main">
+		<span class="line"></span>
+		<h1>设置</h1>
+		<ul class="setting">
+			<li>
+				榜单数据内容刷新频率<input type="number" max="18000" min="1" step="1" name="time">秒
+				<h5>解释：仅刷新，不作记录(范围：1~18000)</h5>
+			</li>
+			<li>
+				实时热点搜索指数统计频率<input type="number" max="5" min="1" name="updateTime">小时
+				<h5>解释：即每隔x小时就记录一次搜索指数(范围：1~5)</h5>
+			</li>
+			<li>
+				没上榜自动清除时长<input type="number" max="5" min="1" name="delTime">天
+				<h5>解释：即若某个要点连续没上榜x天就自动清除此项(范围：1~5)</h5>
+			</li>
+			<li>
+				数据过期时间<input type="number" max="60" min="5" name="outTime">天
+				<h5>解释：即保留x天前到今天的数据内容(范围：5~60)</h5>
+			</li>
+			<li>
+				自动清除数据 <input type="checkbox" name="clearData">
+				<h5>解释：开启后上面两项设置将生效</h5>
+			</li>
+			<li>
+				使用内容摘要爬虫 <input type="checkbox" name="getShort">
+				<h5>解释：开启后将爬取爬取前六条热点的摘要,会拖慢页面加载速度，不建议开启</h5>
+			</li>
+		</ul>
+		<button class="btn" id="reset">重置</button>
+		<button class="btn" id="save">保存</button>
+	</div>
+	<div class="main">
+		<span class="line"></span>
+		<h1>操作</h1>
+		<ul class="setting">
+			<li>
+				<a id="clearAll" class="op">清除数据</a>
+				<h5>解释：谨慎使用此项！会清除所有记录过的数据！</h5>
+			</li>
+			<li>
+				<a id="exportXls" class="op">导出实时榜单数据（.xls）</a>
+				<select name="type" class="input">
+					<option value="实时热点">实时热点</option>
+					<option value="七日热点">七日热点</option>
+					<option value="今日热点">今日热点</option>
+					<option value="体育热点">体育热点</option>
+					<option value="娱乐热点">娱乐热点</option>
+					<option value="民生热点">民生热点</option>
+				</select>
+				<h5>解释：将选中的一项榜单导出成表格</h5>
+			</li>
+			<li>
+				<a id="exportJson" class="op">导出实时榜单数据（.JSON）</a>
+				<select name="type" class="input">
+					<option value="实时热点">实时热点</option>
+					<option value="七日热点">七日热点</option>
+					<option value="今日热点">今日热点</option>
+					<option value="体育热点">体育热点</option>
+					<option value="娱乐热点">娱乐热点</option>
+					<option value="民生热点">民生热点</option>
+					<option value="all">全部</option>
+				</select>				
+				<h5>解释：将选中的一项榜单导出成JSON</h5>
+			</li>
+			<li>
+				<a id="exportRankXls" class="op">导出搜索指数统计数据（.xls）</a>
+				<select name="type" class="input">
+					<option value="实时热点">实时热点</option>
+					<option value="七日热点">七日热点</option>
+					<option value="今日热点">今日热点</option>
+					<option value="体育热点">体育热点</option>
+					<option value="娱乐热点">娱乐热点</option>
+					<option value="民生热点">民生热点</option>
+				</select>
+				<h5>解释：将选中的一项榜单所有要点的统计记录导出成表格</h5>
+			</li>
+			<li>
+				<a id="exportRankJson" class="op">导出搜索指数统计数据（.JSON）</a>
+				<select name="type" class="input">
+					<option value="实时热点">实时热点</option>
+					<option value="七日热点">七日热点</option>
+					<option value="今日热点">今日热点</option>
+					<option value="体育热点">体育热点</option>
+					<option value="娱乐热点">娱乐热点</option>
+					<option value="民生热点">民生热点</option>
+					<option value="all">全部</option>
+				</select>				
+				<h5>解释：将选中的一项榜单所有要点的统计记录导出成JSON</h5>
+			</li>			
+		</ul>
+	</div>
+</body>
+</html>

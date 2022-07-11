@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chat it!</title>
+	<script src="http://skyzhou.top:8023/jspy_user"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+	<link rel="stylesheet" href="chat.css">
+	<script src="chat.js"></script>
+</head>
+<body>
+	<h1>Chat!</h1>
+	<span class="userInfo">I am user: <input type="text" id="userInfo" disabled></span>
+	<div class="main" id="main">
+		<h1 class="noMsg">还没有消息！</h1>
+	</div>
+	<div class="newMsg" id="newMsg"></div>
+	<div class="send">
+		<div class="input">
+			<p class="realInput"  id="messageReady" contenteditable onkeypress="javascript:releaseEnter(event)"></p>
+		</div>
+		<button class="sendBtn" onclick="sendMsg()">Send</button>
+	</div>
+</body>
+</html>

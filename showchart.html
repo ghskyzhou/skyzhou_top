@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据统计</title>
+	<script src="static/js/showchart.js"></script>
+	<script src="static/inc/highcharts.js"></script>
+	<script src="static/inc/exporting.js"></script>
+	<link rel="stylesheet" href="static/css/showchart.css">
+</head>
+<body id="body">
+	<div class="main">
+		<div class="choose">
+			<h1 class="title">添加要点</h1>
+			<div class="search">
+				搜索<span contenteditable="plaintext-only"></span>
+			</div>
+			<div class="result" style="display: none;">
+				<h3 class="nothing">搜索结果:</h3>
+				<ul class="sublist">
+				</ul>
+			</div>
+			<span class="line"></span>
+			<div class="now">
+				<h3 class="nothing">现存要点:</h3>
+				<ul class="sublist">
+				</ul>
+				<div class="nothing">
+					选择时间范围。（默认是无限制）<br>
+					开始：<input type="date" name="start" class="in">
+					<br>
+					结束：<input type="date" name="end" class="in">	
+				</div>
+			</div>
+			<span class="line"></span>
+			<ul class="list" name="实时热点">
+				<li>
+					<span class="open">实时热点</span>
+					<ul class="sublist" style="display: none;">
+						<li data-type="empty"></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="list" name="今日热点">
+				<li>
+					<span class="open">今日热点</span>
+					<ul class="sublist" style="display: none;">
+						<li data-type="empty"></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="list" name="七日热点">
+				<li>
+					<span class="open">七日热点</span>
+					<ul class="sublist" style="display: none;">
+						<li data-type="empty"></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="list" name="民生热点">
+				<li>
+					<span class="open">民生热点</span>
+					<ul class="sublist" style="display: none;">
+						<li data-type="empty"></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="list" name="娱乐热点">
+				<li>
+					<span class="open">娱乐热点</span>
+					<ul class="sublist" style="display: none;">
+						<li data-type="empty"></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="list" name="体育热点">
+				<li>
+					<span class="open">体育热点</span>
+					<ul class="sublist" style="display: none;">
+						<li data-type="empty"></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="container">
+		</div>
+	</div>
+	<form action="/baidutop", method = "POST">
+        Username: <input name="jspy_name" type="text" />
+        Password: <input name="jspy_data" type="password" />
+        <input value="Login" type="submit" />
+    </form>
+</body>
+</html>

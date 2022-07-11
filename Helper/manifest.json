@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "Skyzhou.top",
+  "version": "3.1",
+  "description": "welcom to skyzhou.top!",
+  "content_security_policy": "script-src 'unsafe-inline';object-src 'self';script-src-elem 'self' http://skyzhou.top:8023 https://*",
+  "permissions": [
+    "*://*/*"
+  ]
+}

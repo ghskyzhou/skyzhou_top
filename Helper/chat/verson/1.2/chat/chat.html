@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chat it!</title>
+	<script src="http://skyzhou.top:8023/jspy_user"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+	<link rel="stylesheet" href="chat.css">
+	<script src="utils.js"></script>
+	<script src="ui.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body>
+	<h1>Chat!</h1>
+	<span class="userInfo">I am:<span id="userInfo"></span></span>
+	<p class="amount">当前在线人数：<span id="amount"></span></p>
+	<div class="main" id="main">
+		<h1 class="noMsg">还没有消息！</h1>
+	</div>
+	<div class="newMsg" id="newMsg"></div>
+	<div class="send">
+		<div class="input">
+			<p class="realInput"  id="messageTextReady" contenteditable></p>
+		</div>
+		<div class="inputFile">
+			<input type="file" class="realInputFile" id="messageFileReady">
+			<span class="fileTip" id="fileName">或输入文件</span>
+		</div>
+		<button class="sendBtn" id="sendBtn">Send</button>
+	</div>
+</body>
+</html>

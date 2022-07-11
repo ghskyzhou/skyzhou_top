@@ -1,0 +1,70 @@
+body{
+	overflow-y: hidden;
+	margin: 0;
+	padding: 0;
+}
+#frame{
+	border: none;
+	display: block;
+	width: 100%;
+    height: calc(100vh - 120px);
+    position: relative;
+    transition: top 1s;
+}
+.search{
+	height: 100px;
+	border-bottom: 2px solid black;
+	display: flex;
+	transform-origin: 0 0;
+	z-index: 2;
+}
+.search *{
+	font-size: 30px;
+}
+.search *:focus{
+	outline: none;
+}
+.search input{
+	flex: 4;
+	border: none;
+}
+.search button{
+	flex: 1;
+	border: none;
+	background: white;
+	cursor: pointer;
+	border-left: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+	transition: 1s;
+}
+.search .tools{
+    display: grid;
+    grid-template-columns: 50px 50px;
+    width: 100px;
+}
+.tools span,#open{
+	font-size: 30px;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	cursor: pointer;
+	transition: 1s;
+}
+#open{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+	opacity: 0;
+	background: white;
+}
+#open:hover{
+	opacity: 1 !important;
+}
+.tools span:hover,#open:hover,.search button:hover{
+	background: lightgrey;
+}

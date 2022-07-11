@@ -1,0 +1,161 @@
+@keyframes rotateIn{
+	0%{
+		transform: rotate(720deg) scale(0);
+		opacity: 0;
+	}
+	100%{
+		transform: rotate(0deg) scale(1);
+		opacity: 1;
+	}
+}
+@keyframes pageUp{
+	0%{
+		transform:translateY(0);
+	}
+	100%{
+		transform:translateY(-110vh);
+	}
+}
+@keyframes textTip{
+	from{
+		transform:translateY(0);
+		opacity: 0;
+	}
+	to{
+		transform:translateY(-20px);
+		opacity: 1;
+	}
+}
+@keyframes fadeDown{
+	from{
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+	to{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@keyframes fadeUp{
+	from{
+		transform: translateY(40px);
+		opacity: 0;
+	}
+	to{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+@keyframes brightIn{
+	from{
+		opacity: 1;
+		filter: brightness(3000%);
+	}
+	to{
+		opacity: 1;
+		filter: brightness(100%);
+	}
+}
+@keyframes imgSlideIn-1{
+	from{
+		background-position-x: 743px;
+	}
+	to{
+		background-position-x: 0px;
+	}
+}
+@keyframes scaleIn{
+	0%{
+		transform: scale(0);
+	}
+	50%{
+		transform: scale(1.5);
+	}
+	75%{
+		transform: scale(1);
+	}
+	90%{
+		transform: scale(1.25);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+@keyframes imgSlideIn-2{
+	from{
+		background-position-x: 704px;
+	}
+	to{
+		background-position-x: 0px;
+	}
+}
+@keyframes imgSlideIn-3{
+	from{
+		background-position-x: 682px;
+	}
+	to{
+		background-position-x: 0px;
+	}
+}
+@keyframes fadeLeft{
+	from{
+		transform: translateX(-40px);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+@keyframes slideLeft{
+	0%{
+		transform: translateX(-100vw);
+	}
+	100%{
+		transform: translateX(0px);
+	}
+}
+@keyframes slideRight{
+	0%{
+		transform: translateX(100vw);
+	}
+	100%{
+		transform: translateX(0px);
+	}
+}
+@keyframes imgSlideIn-4{
+	from{
+		background-position-x: 500px;
+	}
+	to{
+		background-position-x: 0px;
+	}
+}
+@keyframes scrollOpen{
+	from{
+		transform: scaleY(0);
+	}
+	to{
+		transform: scaleY(1);
+	}
+}
+@keyframes scrollUp{
+	from{
+		transform: translateY(80vh);
+	}
+	to{
+		transform: translateY( calc(calc((100vh - 200px) * 0.85) - 100%) );
+	}
+}
+@keyframes music{
+	from{transform: rotate(0deg);}
+	from{transform: rotate(360deg);}
+}

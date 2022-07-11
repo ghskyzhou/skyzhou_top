@@ -1,0 +1,498 @@
+/*
+Hi! If my code is useful for you can you donate me some money? 
+https://www.paypal.me/melnik909
+*/
+
+/*
+=====
+DEMO DEPENDENCIES
+=====
+*/
+
+@import "https://stas-melnikov.ru/r-blocks/r-button.css";
+@import "https://stas-melnikov.ru/r-blocks/r-link.css";
+
+/*
+* core styles
+*/
+
+.ai-element{
+	--uiaiElementDisplay: var(--aiElementDisplay, inline-flex);	
+	--uiaiElementTextColor: var(--aiElementTextColor);
+	--uiaiElementTextColorHover: var(--aiElementTextColorHover);	
+
+	display: var(--uiaiElementDisplay);
+	color: var(--uiaiElementTextColor);
+	position: relative;
+	overflow: hidden;
+}
+
+.ai-element__label{
+	display: block;
+}
+
+/* ai-element_padding-all */ 
+
+.ai-element_padding-all{
+	--uiaiElementLineWeight: var(--aiElementLineWeight, 2px);
+	--uiaiElementLineColor: var(--aiElementLineColor, #000);
+	--uiaiElementPadding: var(--aiElementPadding, 5px);
+
+	padding: var(--uiaiElementPadding);
+}
+
+.ai-element_padding-all::before, 
+.ai-element_padding-all::after{
+	width: 100%;
+	height: var(--uiaiElementLineWeight);
+	left: 0;
+}
+
+.ai-element_padding-all::before{
+	top: 0;
+}
+
+.ai-element_padding-all::after{
+	bottom: 0;
+}
+
+.ai-element_padding-all .ai-element__label::before,
+.ai-element_padding-all .ai-element__label::after{
+	width: var(--uiaiElementLineWeight);
+	height: 100%;
+	top: 0;
+}
+
+.ai-element_padding-all .ai-element__label::before{
+	left: 0;
+}
+
+.ai-element_padding-all .ai-element__label::after{
+	right: 0;
+}
+
+.ai-element_padding-all::before,
+.ai-element_padding-all::after,
+.ai-element_padding-all .ai-element__label::before,
+.ai-element_padding-all .ai-element__label::after{
+	content: "";     
+	background-color: var(--uiaiElementLineColor);
+	position: absolute; 
+	opacity: 1;
+
+	will-change: transform, opacity;
+	transition-property: opacity, -webkit-transform;
+	transition-property: transform, opacity;
+	transition-property: transform, opacity, -webkit-transform;
+}
+
+.ai-element_padding-all:hover::before,
+.ai-element_padding-all:hover::after,
+.ai-element_padding-all:hover .ai-element__label::before,
+.ai-element_padding-all:hover .ai-element__label::after{
+	opacity: 0;
+}
+
+/* ai-element_padding-bottom */ 
+
+.ai-element_padding-bottom{
+	--uiaiElementLineWeight: var(--aiElementLineWeight, 2px);
+	--uiaiElementLineColor: var(--aiElementLineColor, #000);	
+
+	padding-bottom: var(--uiaiElementLineWeight);	
+	position: relative;
+}
+
+.ai-element_padding-bottom::after{
+	content: "";
+	width: 100%;
+	height: var(--uiaiElementLineWeight);
+	background-color: var(--uiaiElementLineColor);
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+/* ai-element_bg */ 
+
+.ai-element_bg {
+	--uiaiElementLineColor: var(--aiElementLineColor, #000);	
+	--uiaiElementTextColor: var(--aiElementTextColor, #fff);
+	--uiaiElementTextColorHover: var(--aiElementTextColorHover, #000);
+	--uiaiElementPadding: var(--aiElementPadding, 5px);
+
+	padding: var(--uiaiElementPadding);
+	transition: color .3s ease-out;
+}
+
+.ai-element_bg::before, 
+.ai-element_bg::after{
+	content: "";
+	background-color: var(--uiaiElementLineColor);	
+	opacity: 1;
+	position: absolute;
+
+	transition: opacity .35s ease-out .03s, -webkit-transform .35s ease-out;
+
+	transition: transform .35s ease-out, opacity .35s ease-out .03s;
+
+	transition: transform .35s ease-out, opacity .35s ease-out .03s, -webkit-transform .35s ease-out;
+}
+
+.ai-element_bg .ai-element__label{
+	position: relative;
+	z-index: 2;
+}
+
+.ai-element_bg:hover::before, 
+.ai-element_bg:hover::after{
+	opacity: 0;
+	transition-delay: 0s;
+}
+
+.ai-element_bg:hover{
+	color: var(--uiaiElementTextColorHover);
+}
+
+/* ai-element_text */ 
+
+.ai-element_text::before{
+	content: attr(data-ai-element-text);
+	color: var(--uiaiElementTextColorHover);
+	position: absolute;
+}
+
+.ai-element_text::before, 
+.ai-element_text .ai-element__label{
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+	transition-timing-function: cubic-bezier(.86, .6, .08, 1.01); 
+	transition-duration: .4s;
+}
+
+.ai-element_text:hover::before,
+.ai-element_text:hover .ai-element__label{
+	transition-duration: .3s;
+}
+
+/* effect 1 */
+
+.ai-element1::before,
+.ai-element1::after,
+.ai-element1 .ai-element__label::before,
+.ai-element1 .ai-element__label::after{
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+	transition-timing-function: ease-out;
+	transition-duration: .2s, .15s;
+}
+
+.ai-element1:hover::before,
+.ai-element1:hover::after,
+.ai-element1:hover .ai-element__label::before,
+.ai-element1:hover .ai-element__label::after{
+	transition-duration: .25s;
+}
+
+.ai-element1:hover::before{
+	-webkit-transform: translate3d(-105%, 0, 0);
+	        transform: translate3d(-105%, 0, 0);
+}
+
+.ai-element1:hover::after{
+	-webkit-transform: translate3d(105%, 0, 0);
+	        transform: translate3d(105%, 0, 0);
+}
+
+.ai-element1:hover .ai-element__label::before{
+	-webkit-transform: translate3d(0%, -100%, 0);
+	        transform: translate3d(0%, -100%, 0);
+}
+
+.ai-element1:hover .ai-element__label::after{
+	-webkit-transform: translate3d(0%, 100%, 0);
+	        transform: translate3d(0%, 100%, 0);
+}
+
+/* effect 2 */
+
+.ai-element2::after{
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+	transition: -webkit-transform .2s ease-in;
+	transition: transform .2s ease-in;
+	transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+.ai-element2:hover::after{
+	-webkit-transform: translate3d(-100%, 0, 0);
+	        transform: translate3d(-100%, 0, 0);
+}
+
+/* effect 3 */
+
+.ai-element3::after{
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+	transition: opacity .3s ease-out, -webkit-transform .3s ease-out;
+	transition: transform .3s ease-out, opacity .3s ease-out;
+	transition: transform .3s ease-out, opacity .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.ai-element3:hover::after{
+	opacity: 0;
+	-webkit-transform: translate3d(0, 100%, 0);
+	        transform: translate3d(0, 100%, 0);
+}
+
+/* effect 4 */
+
+.ai-element4::before,
+.ai-element4::after,
+.ai-element4 .ai-element__label::before,
+.ai-element4 .ai-element__label::after{
+	transition-timing-function: ease-out;
+	transition-duration: .2s, .2s;
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+}
+
+.ai-element4:hover::before,
+.ai-element4:hover::after,
+.ai-element4:hover .ai-element__label::before,
+.ai-element4:hover .ai-element__label::after{
+	transition-delay: 0s, .05s;	
+}
+
+.ai-element4:hover::before{
+	-webkit-transform: translate3d(-100%, 0, 0);
+	        transform: translate3d(-100%, 0, 0);
+}
+
+.ai-element4:hover::after{
+	-webkit-transform: translate3d(100%, 0, 0);
+	        transform: translate3d(100%, 0, 0);
+}
+
+.ai-element4:hover .ai-element__label::before{
+	-webkit-transform: translate3d(0, 100%, 0);
+	        transform: translate3d(0, 100%, 0);
+}
+
+.ai-element4:hover .ai-element__label::after{
+	-webkit-transform: translate3d(0, -100%, 0);
+	        transform: translate3d(0, -100%, 0);
+}
+
+/* effect 5 */
+
+.ai-element5::before,
+.ai-element5::after, 
+.ai-element5 .ai-element__label::before,
+.ai-element5 .ai-element__label::after{
+	transition-duration: .2s;
+	transition-timing-function: ease-out;
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+}
+
+.ai-element5::before, 
+.ai-element5::after{
+	width: 100%;
+	height: var(--uiaiElementLineWeight);
+	left: 0;
+}
+
+.ai-element5 .ai-element__label::before,
+.ai-element5 .ai-element__label::after{
+	width: var(--uiaiElementLineWeight);
+	height: 100%;
+	top: 0;
+}
+
+.ai-element5::before{
+	top: 0;
+}
+
+.ai-element5::after{
+	bottom: 0;
+}
+
+.ai-element5 .ai-element__label::before{
+	left: 0;
+}
+
+.ai-element5 .ai-element__label::after{
+	right: 0;
+}
+
+.ai-element5:hover::before,
+.ai-element5:hover .ai-element__label::before{
+	transition-delay: 0s;
+}
+
+.ai-element5::after,
+.ai-element5:hover .ai-element__label::after{
+	transition-delay: .25s;
+}
+
+.ai-element5 .ai-element__label::after,
+.ai-element5:hover::after{
+	transition-delay: .15s;
+}
+
+.ai-element5 .ai-element__label::before,
+.ai-element5:hover::before{
+	transition-delay: .35s;
+}
+
+.ai-element5:hover::before{
+	-webkit-transform: translate3d(-105%, 0, 0);
+	        transform: translate3d(-105%, 0, 0);
+}
+
+.ai-element5:hover::after{
+	-webkit-transform: translate3d(105%, 0, 0);
+	        transform: translate3d(105%, 0, 0);
+}
+
+.ai-element5:hover .ai-element__label::before{
+	-webkit-transform: translate3d(0, 105%, 0);
+	        transform: translate3d(0, 105%, 0);
+}
+
+.ai-element5:hover .ai-element__label::after{
+	-webkit-transform: translate3d(0, -105%, 0);
+	        transform: translate3d(0, -105%, 0);
+}
+
+/* effect 6 */
+
+.ai-element6::before,
+.ai-element6::after{
+	width: 50%;
+	height: 100%;
+	top: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);  
+}
+
+.ai-element6::before{
+	left: 0;
+}
+
+.ai-element6::after{
+	right: 0;
+}
+
+.ai-element6:hover::before{
+	-webkit-transform: translate3d(-100%, 0, 0);
+	        transform: translate3d(-100%, 0, 0);
+}
+
+.ai-element6:hover::after{
+	-webkit-transform: translate3d(100%, 0, 0);
+	        transform: translate3d(100%, 0, 0);
+}
+
+/* effect 7 */
+
+.ai-element7::before,
+.ai-element7::after{
+	width: 100%;
+	height: 50%;
+	left: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+}
+
+.ai-element7::before{
+	top: 0;
+}
+
+.ai-element7::after{
+	bottom: 0;
+}
+
+.ai-element7:hover::before{
+	-webkit-transform: translate3d(0, -50%, 0);
+	        transform: translate3d(0, -50%, 0);
+}
+
+.ai-element7:hover::after{
+	-webkit-transform: translate3d(0, 50%, 0);
+	        transform: translate3d(0, 50%, 0); 
+}
+
+/* effect 8 */
+
+.ai-element8::before,
+.ai-element8::after{
+	width: 51%;
+	height: 100%;
+	-webkit-transform: rotate(0);
+	        transform: rotate(0);
+	top: 0;
+}
+
+.ai-element8::before{
+	left: 0;
+}
+
+.ai-element8::after{
+	right: 0;
+}
+
+.ai-element8:hover::before,
+.ai-element8:hover::after{
+	-webkit-transform: rotate(360deg);
+	        transform: rotate(360deg);
+}
+
+/* effect 9 */
+
+.ai-element9::before,
+.ai-element9::after{
+	width: 51%;
+	height: 100%;
+	top: 0; 
+	-webkit-transform: translate3d(0, 0, 0); 
+	        transform: translate3d(0, 0, 0);
+}
+
+.ai-element9::before{
+	left: 0;
+}
+
+.ai-element9::after{
+	right: 0;
+}
+
+.ai-element9:hover::before{
+	-webkit-transform: translate3d(-100%, 0, 0) rotate(-45deg);
+	        transform: translate3d(-100%, 0, 0) rotate(-45deg);
+}
+
+.ai-element9:hover::after{
+	-webkit-transform: translate3d(100%, 0, 0) rotate(-45deg);
+	        transform: translate3d(100%, 0, 0) rotate(-45deg);	
+}
+
+/*
+SETTINGS
+*/
+
+.ai-element{
+	--aiElementPadding: 10px 15px;
+	--aiElementLineWeight: 5px;
+	--aiElementLineColor: #243aab;
+	--aiElementTextColor: #1b255a;
+	--aiElementTextColorHover: #243aab;
+}
+
+.ai-element_bg{
+	--aiElementTextColor: #fff;
+}

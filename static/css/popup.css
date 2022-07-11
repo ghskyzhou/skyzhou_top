@@ -1,0 +1,114 @@
+body{
+  width: 300px;
+}
+img[alt=logo]{
+  display: block;
+  width: 87px;
+  margin: 10px auto;
+}
+.typelist{
+  height: 250px;
+  background: #307DC8;
+  list-style: none;
+  width: 75px;
+  padding: 2px 0;
+  overflow-x: hidden;
+  margin-top: 0;
+}
+.typelist li{
+  margin: 10px 5px;
+  color: white;
+  border-radius: 5px;
+  padding: 7px;
+  background: #307DC8;
+  transition: 1s;
+  cursor: pointer;
+  margin-right: -10px;
+}
+.typelist li:hover{
+  background: white;
+  color:#307DC8;
+}
+.on{
+  background: white !important;
+  color:#307DC8 !important;
+}
+.main{
+  display: flex;
+  overflow-y: hidden;
+  max-height: 250px;
+  overflow-x: hidden;
+}
+.line{
+  width: 200px;
+  height: 3px;
+  background: #307DC8;
+  display: block;
+  margin:0px calc( ( 300px - 275px) / 2) 10px;
+}
+.title{
+  display: block;
+  text-align: center;
+  margin: 2px auto;
+}
+.title:hover::after{
+  content: '>>';
+  font-size: small;
+  display: inline;
+}
+.ranks{
+  list-style: none;
+  counter-reset: i;
+  padding-left: 20px;
+}
+.ranks li::before{
+  content: "Rank#" counter(i);
+  counter-increment: i;
+  margin-right: 10px;
+  font-size: 15px;
+}
+.ranks li:nth-child(1)::before{
+  color: red;
+}
+.ranks li:nth-child(2)::before,.ranks li:nth-child(3)::before{
+  color: orange;
+}
+.ranks li{
+  line-height: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+.item{
+  height: 250px;
+  margin: 0;
+}
+.link{
+  transition: 1s;
+  color: black;
+  text-decoration: none;
+}
+.link:hover{
+  text-decoration: underline;
+}
+.new::after{
+  color: red;
+  transform: rotate(36deg) translate(-21px,-10px);
+  display: inline-block;
+  font-size: 4px;
+  margin: 0px;
+  padding: 0;
+  height: 53px;
+  width: 0px;
+  content: 'new!';
+}
+.content{
+  transition: 1s;
+}
+footer{
+  display: block;
+  color: grey;
+  text-align: center;
+}
+footer a{
+  color: inherit !important;
+}

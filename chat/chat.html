@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chat it!</title>
+	<script src="http://skyzhou.top:8023/jspy_user"></script>
+	<script src="./js/socket.io.min.js"></script>
+	<link rel="stylesheet" href="./css/chat.css">
+	<link rel="stylesheet" href="./css/markdown.css">
+	<script src="./js/markdown.js"></script>
+	<script src="./js/utils.js"></script>
+	<script src="./js/ui.js"></script>
+	<script src="./js/controller.js"></script>
+</head>
+<body>
+	<h1>Chat!</h1>
+	<span class="userInfo">I am:<span id="userInfo"></span></span>
+	<p class="amount">当前在线人数：<span id="amount"></span></p>
+	<div class="main" id="main">
+		<h1 class="noMsg">还没有消息！</h1>
+	</div>
+	<div class="newMsg" id="newMsg"></div>
+	<div class="send">
+		<div class="input">
+			<p class="realInput"  id="messageTextReady" contenteditable></p>
+			<span class="emojiBtn" none-select id="emojiBtn">:)</span>
+			<div class="emoji" id="emoji"></div>
+			<div class="useMd">
+				<input type="checkbox" class="checkUseMarkdown" id="checkUseMd">使用Markdown	
+			</div>
+		</div>
+		<div class="more">
+			<span class="moreBtn" id="moreBtn" title="更多" none-select>+</span>
+			<ul id="moreList" hidden>
+				<li>
+					<div class="inputFile" none-select>
+						<input type="file" class="realInputFile" id="messageFileReady" multiple>
+						<span class="fileTip">或输入文件</span>
+					</div>
+				</li>
+				<li>
+					<div class="inputFile" none-select>
+						<span class="realInputFile" id="audioBtn"></span>
+						<span class="fileTip">录音！</span>
+					</div>
+				</li>
+			</ul>
+			<div class="recorderWindow" id="recorderWindow" hidden>
+				<span class="closeWin" id="closeWin" none-select>X</span>
+				<h2>录音</h2>
+				<hr>
+				<div class="audioContent">
+					<audio class="audioData" controls="controls" id="messageAudioReady" autoplay></audio>
+					<span class="audioControl">
+						<button class="controlBtn">▶</button>
+						<button class="controlBtn">■</button>
+						<button class="controlBtn">X</button>
+						<button class="controlBtn">√</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		<button class="sendBtn" id="sendBtn" none-select>Send</button>
+	</div>
+</body>
+</html>

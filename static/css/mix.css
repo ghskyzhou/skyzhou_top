@@ -1,0 +1,161 @@
+.main-col{
+	display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.contentlist{
+  background: #307DC8;
+  list-style: none;
+  padding: 2px 0;
+  overflow-x: hidden;
+  border-radius: 7px;
+  text-align: center;
+  margin: 12px 15px;
+}
+.contentlist li{
+  margin: 10px 5px;
+  color: white;
+  border-radius: 5px;
+  background: #307DC8;
+  transition: 1s;
+  display: inline-block;
+  line-height: 35px;
+  font-size: 25px;
+  padding: 4px;
+}
+.contentlist li:hover{
+  background: white;
+  color:#307DC8;
+  cursor: pointer;		  
+}
+.on{
+  background: white !important;
+  color:#307DC8 !important;
+}
+.line-blue{
+  height: 3px;
+  background: #307DC8;
+  display: block;
+  margin:12px auto;
+}
+.content{
+  width: calc(100vw - 90px);
+  height: 100%;
+  margin-left: 10px;
+}
+h1{
+  margin: 10px auto;
+  font-size: 35px;
+}
+th{
+  font-size: x-large;
+  padding-bottom: 0;
+}
+th:nth-child(1){
+  padding-left: 115px;
+}
+td{
+  text-align: center;
+  font-size: 20px;
+  height: inherit;
+}
+tr{
+  display: block;
+  line-height: 55px;
+  height: 55px;
+}
+tr:nth-of-type(2n+1):not(:only-child){
+  background: rgb(244,244,244);
+}
+tbody{
+  counter-reset: i;
+}
+table{
+  width: 109%;
+}
+tr:not(:only-child)::before{
+	content: "#Rank " counter(i);
+	counter-increment: i;
+	display: inline-block;
+	width: 100px;
+	vertical-align: middle;
+	font-size: 24px;
+	margin-left: 25px;
+}
+tr:not(:only-child):nth-child(1)::before{
+	color: red;
+}
+tr:not(:only-child):nth-child(2)::before,tr:not(:only-child):nth-child(3)::before{
+	color: orange;
+}
+tr:not(:only-child):nth-child(4)::before,tr:not(:only-child):nth-child(5)::before{
+	color: #FFCA28;
+}
+tr:not(:only-child)>td{
+	display: inline-block;
+}
+tr>:nth-child(1){
+	width: 235px;
+}
+tr>:nth-child(2){
+	width: 160px;
+}
+tr>:nth-child(2)>:nth-child(2),tr>:nth-child(2)>:nth-child(3){
+  display: none;
+}
+tr>:nth-child(3),tr>:nth-child(4){
+	width: 110px;
+}
+a{
+	color: black;
+	transition: 1s;
+	text-decoration: none;
+	margin: auto 15px; 
+}
+a:hover{
+	text-decoration: underline;
+	color: #307DC8;
+}
+.rankUp::after{
+	content: '↑';
+	color: red;
+	display: inline-block;
+	transform: translate(3px,0px) scale(1.5);
+}
+.rankFall::after{
+	content: '↓';
+	color: green;
+	display: inline-block;
+	transform: translate(3px,0px) scale(1.5);
+}
+.rankNotChanged::after{
+	content: '-';
+	color: grey;
+	display: inline-block;
+	transform: translate(3px,-2px) scale(1.5);
+}
+.new::after{
+  color: red;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 3px;
+  content: 'new!';
+  width: 0;
+  height: 0;
+  transform: translate(-13px, -25px);
+}
+.highcharts-title{
+  font-size: 35px !important;
+}
+.highcharts-subtitle{
+  font-size: 28px !important;
+}
+.highcharts-axis-title{
+  font-size: 23px !important;
+}
+.highcharts-axis-labels>text,.highcharts-yaxis-labels>text{
+  font-size: 20px !important;
+}
+#container,#container *{
+  overflow:visible !important;
+}

@@ -1,0 +1,139 @@
+body{
+	margin:0;
+}
+.choose{
+	background: #307DC8;
+	color: white;
+	width: 300px;
+	overflow: hidden;
+	min-height: 100vh;
+}
+.search>span,.in{
+	border:none;
+	background: white;
+	color: #307DC8;
+	width: 180px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	border-bottom: 2px solid #7ee1ff;
+	outline: none;
+	padding: 2px 4px;
+	text-align: left;
+	overflow: hidden;
+}
+.in{
+	width: 150px;
+	margin: 5px;
+}
+.search{
+	padding: 5px;
+	text-align: center;
+	font-size: 15px;
+	height: 30px;
+}
+.search::before{
+	content: url('../search.png');
+	vertical-align: middle;
+}
+.title{
+	display: block;
+	font-size: 25px;
+	margin: 10px auto;
+	text-align: center;
+}
+.line{
+	display: block;
+	background: white;
+	width: 86%;
+	height: 3px;
+	margin: 3px 7%;
+}
+.list>li>span{
+	font-size: 20px;
+}
+.list:not(:last-child){
+	margin-bottom: 0;
+}
+.list,.sublist{
+	list-style: none;
+}
+span.open,span.close{
+	cursor: pointer;
+}
+span.open::before{
+	content: '+';
+	margin-right: 10px;
+	margin-left: -10px;
+	transform: rotate(405deg);
+	display: inline-block;
+	transform-origin: 6px 16px;
+}
+span.close::before{
+	content: '+';
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: -10px;
+	transform-origin: 6px 16px;
+}
+span.close.ani::before,span.open.ani::before{
+	transition: 1s;
+}
+.sublist{
+	overflow-x: hidden;
+	background: white;
+	width: 70%;
+	color: #307DC8;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    margin-top: 5px;
+    padding-left: 0px;
+}
+.sublist>li{
+	padding-left: 12px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.sublist>li:hover{
+	background: #80808047;
+}
+.sublist>li:first-child{
+	transition: margin-top 3s;
+}
+.sublist>li:last-child{
+	margin-bottom: 5px;
+}
+.sublist>li:not([data-type=empty])::after{
+	content: '+';
+	float: right;
+	margin-right: 5px;
+}
+.result,.now{
+	padding: 0px 15%;
+}
+.result>.sublist,.now>.sublist{
+	border-radius: 0px;
+	width: 86%;
+	display: block;
+}
+.now>.sublist>li::after{
+	content: '-';
+	transform: scale(1.3);
+}
+.main{
+	display: flex;
+}
+#container{
+	width: calc( 100vw - 310px);
+	height:100vh;
+	position: fixed;
+	top: 0;
+	left: 300px;
+}
+h3.nothing::after{
+	content: '暂无';
+}
+div.nothing{
+	display: none;
+}

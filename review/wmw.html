@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背文盲文啦！</title>
+	<script src="../static/js/wmw/question.js"></script>
+	<script src="../static/js/wmw/vue.js"></script>
+	<script src="../static/js/wmw/try.js"></script>
+	<style>
+		span.text{
+			font-size: xx-large;
+		}
+		span.green{
+			color: green;
+		}
+		span.error{
+			color: red;
+		}
+		span.ans{
+			color: white;
+		}
+		span.ans:hover{
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<div id="vue">
+		<div v-show="start==0">
+			<div>
+				<h2>八下文盲文句子翻译</h2>
+				<span v-for="(val,key) in question[0]">
+					{{key}} 
+					<input type="checkbox" :value="JSON.stringify(val)" v-model="choose" @change="refresh()"/>
+				</span>
+			</div>
+			<div>
+				<h2>八下文盲文词语注释</h2>
+				<span v-for="(val,key) in question[1]">
+					{{key}} 
+					<input type="checkbox" :value="JSON.stringify(val)" v-model="choose" @change="refresh()"/>
+				</span>
+			</div>
+			<br>
+			题目数：<input type="number" min="1" v-model="total">
+			<br><br>
+			<button @click="change(0,0)">开始吧！</button>
+		</div>
+		<div v-show="start==1">
+			<span class="text">{{now[0]}}</span>
+			<br>
+			答案是：<span class="ans">{{now[1]}}</span>
+			<hr>
+			<button @click="change(1,0)">我知道！</button>
+			<button @click="change(0,1)">我不知道！</button>
+			<br>
+			<span>
+				状态：{{historyArr.length}}/{{Math.min(historyArr.length+arr.length,total)}}
+			</span>
+		</div>
+		<div v-show="start==-1">
+			<span class="green">正确：{{correct}}</span>
+			<br>
+			<span class="error">
+				错误：{{incorrect}}
+				<ul>
+					<li v-for="err in errorArr">{{err[0]}}</li>
+				</ul>
+			</span>
+			<br>
+			<button @click="restart(-1)" v-if="incorrect">重新开始（错的题）</button>
+			<button @click="restart(1)">重新开始（题库不变）</button>
+			<button @click="restart(0)">重新开始（重新选择题库）</button>
+		</div>
+	</div>
+</body>
+</html>

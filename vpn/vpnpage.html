@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>VPN Service</title>
+	<!-- <script type="text/javascript" src="polyfill.js"></script> -->
+	<script src="./js/vpn.js" type="module"></script>
+	<script src="./js/turn.js"></script>
+	<script src="./js/ui.js" type="module"></script>
+	<script src="./js/ctrl.js" type="module"></script>
+	
+</head>
+<body><link rel="stylesheet" href="vpn.css">
+	<div class="search" id="search">
+		<input type="text" id="url" value="" placeholder=" where you want to go....">
+		<button id="go">Go</button>
+		<div class="tools">
+			<span id="forward">→</span>
+			<span id="reload">🗘</span>
+			<span id="back">←</span>
+			<span id="close">⇱</span>
+		</div>
+	</div>
+	<span id="open">⇲</span>
+	<iframe id="frame"></iframe>
+</body>
+</html>

@@ -1,0 +1,141 @@
+h1{
+	margin-bottom: 10px;
+	display: inline-block;
+}
+.main{
+	height: 70vh;
+	width: auto;
+	border: 2px solid black;
+	border-radius: 3px;
+	padding: 5px;
+	overflow-y: scroll;
+}
+.msg{
+	padding-bottom: 10px;
+	display: flex;
+	transition: 1s;
+}
+.hiddenMsg{
+	margin-top: 10px;
+	opacity: 0;
+}
+.user{
+	display: inline-block;
+	border-right: 1px solid grey;
+	width: 150px;
+	text-align: right;
+	padding-right: 3px;
+	font-weight: bold;
+	padding-top: 4px;
+	word-break: break-all;
+}
+.msgBody{
+	display: inline-block;
+	padding: 3px;
+	background: skyblue;
+	border-radius: 5px;
+	max-width: 70%;
+	margin-left: 3px;
+	word-break: break-all;
+}
+.time{
+	flex: 10;
+	display: inline-block;
+	color: gray;
+	text-align: right;
+	font-size: small;
+}
+.newMsg{
+	background: greenyellow;
+	font-size: small;
+	position: relative;
+	top: -35px;
+	height: 25px;
+	width: 80%;
+	padding-left: 10px;
+	line-height: 25px;
+	transition: 1s;
+	opacity: 0;
+	margin-left:auto;
+	margin-right: auto;
+}
+.icon{
+	background: red;
+	border-radius: 3px;
+	font-size: xx-small;
+	color: white;
+	margin-right: 5px;
+	padding: 1px;
+	font-weight: normal;
+	display:inline-block;
+}
+.icon-super{
+	background: red;
+}
+.icon-admin{
+	background: green;
+}
+.icon-normal{
+	display: none;
+}
+.send{
+	display: flex;
+	margin-top: -20px;
+}
+.input{
+	box-shadow: inset 0px 0px 5px black;
+	border-radius: 3px; 
+	border: 1px solid black;
+	flex: 2;
+	min-height: 20px;
+	margin-right: 5px;
+	padding: 5px;
+	line-height: 20px;
+	transition: 1s;
+}
+.input:focus-within{
+	border: 1px solid #2196F3;
+	box-shadow: inset 0px 0px 5px skyblue;
+	min-height: 95px;
+}
+.realInput:empty:not(:focus)::before{
+	color: grey;
+	font-size: smaller;
+	content: "说点什么吧……，ctrl+enter可以发送信息";
+	height: 20px;
+	display: block;
+	pointer-events: none;
+}
+.sendBtn{
+	height: 30px;
+	transition: 0.7s;
+	cursor: pointer;
+	background: skyblue;
+	border: 1px solid #0288D1;
+}
+.sendBtn:hover{
+	box-shadow: 0 0 3px black;
+	background: white;
+	color: skyblue;
+}
+.sendBtn:focus{
+	outline: none;
+}
+.realInput,.realInput:focus{
+	border: none;
+	outline: none;
+	margin: 0px;
+	padding: 0px;
+	min-width: 100%;
+	line-height: 20px;
+	word-break: break-all;
+}
+.userInfo{
+	padding-left: 30px;
+}
+.noMsg{
+	color: grey;
+}
+.noMsg:not(:last-child){
+	display: none;
+}

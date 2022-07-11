@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Skyzhou.top VPN Service",
+  "version": "3.1",
+  "description": "vpn background",
+  "permissions": [
+    "*://*/*",
+    "background"
+  ],
+  "background":{
+    "scripts":[
+      "socket.io.min.js",
+      "background.js"
+    ]
+  }
+}

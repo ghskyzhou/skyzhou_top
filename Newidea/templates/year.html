@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>skyzhou.top年度报告</title>
+	<script src="./static/report.js"></script>
+	<script src="./static/visit.js"></script>
+	<link rel="stylesheet" href="./static/animate.css">
+</head>
+<body>
+	<div class="load">
+		<style>
+			.load{
+				background: white;
+				width: 100vw;
+				height: 100vh;
+				font-size: 80px;
+				color: #ba124a;
+				transition: 0.5s;
+			}
+			body,:root{
+				overflow:initial !important;
+			}
+			.loading{
+				height: 100px;
+				display: inline-block;
+				position: absolute;
+				top: calc(50vh - 50px);
+				width: 100vw;
+				text-align: center;
+				font-family: 宋体 !important;
+			}
+			.loading *{
+				font-family: 宋体 !important;
+			}
+			@keyframes jump1{
+				0%{top: 0px;}
+				25%{top: -10px;}
+				50%{top: 0px;}
+				100%{top: 0px;}
+			}
+			@keyframes jump2{
+				0%{top: 0px;}
+				25%{top: 0px;}
+				50%{top: -10px;}
+				75%{top: 0px;}
+				100%{top: 0px;}
+			}
+			@keyframes jump3{
+				0%{top: 0px;}
+				50%{top: 0px;}
+				75%{top: -10px;}
+				100%{top: 0px;}
+			}
+			@keyframes float{
+				0%{opacity: 0}
+				100%{opacity: 1}
+			}
+			.ch1{
+				animation: jump1 2s infinite;
+			}
+			.ch2{
+				animation: jump2 2s infinite;
+			}
+			.ch3{
+				animation: jump3 2s infinite;
+			}
+			[class*=ch]{
+				position: relative;
+			}
+			.music{
+				display: none;
+			}
+			.small{
+				font-size: smaller;
+			}
+			.waiting:hover{
+				transform: translateX(-50px);
+				animation-play-state: paused;
+				opacity: 1 !important;
+			}
+			.waiting{
+				transition: transform 0.5s;
+				animation: float 2s ease-out infinite alternate;
+			}
+		</style>
+		<span class="loading">
+			加载中<span class="ch1">.</span><span class="ch2">.</span><span class="ch3">.</span>
+			<br>
+			<span class="small"></span>
+		</span>
+	</div>
+	<div class="page" hidden>
+		<img src="./static/res/logo.png" class="logo" abs last>
+	</div>
+	<div class="page" hidden>
+		<h1 class="title" abs>缘起</h1>
+		<span class="text1-1" abs><span class="mark">2020年2月4日</span>，
+		Skyzhou购买域名，开始了建造<span class="mark">Skyzhou.top</span>的历程</span>
+		<span class="img1-2" abs></span>
+		<span class="text1-3" abs>就这样，一个<span class="mark">壮丽的事业</span>开始了！</span>
+		<span class="img1-4" abs ></span>
+		<span class="img1-5" abs last></span>
+	</div>
+	<div class="page" hidden>
+		<h1 class="title" abs>第一步的建设——<span class="mark">baiduTop</span></h1>
+		<span class="text2-1" abs><span class="mark">2020年4月22日</span>，baiduTopHelper开始研发</span>
+		<span class="img2-2" abs></span>
+		<span class="text2-3" abs>后来，经过多次修改，最终形成了<span class="mark">baiduTop</span></span>
+		<span class="img2-4" abs></span>
+		<span class="img2-5" abs></span>
+		<span class="text2-6" abs last>现在，baiduTop已经有了很不错的<span class="mark">响应能力</span>和<span class="mark">图表绘制能力</span>。</span>
+	</div>
+	<div class="page" hidden>
+		<h1 class="title" abs>今年的MVP——<span class="mark">Chat</span></h1>
+		<span class="text3-1" abs><span class="mark">2020年10月2日</span>，开始研发Chat，不久ChatV1.0问世</span>
+		<span class="img3-2" abs></span>
+		<span class="text3-3" abs>V1.0出现后，多次经过更新、修改</span>
+		<span class="text3-4" abs>V1.1-大幅美化界面</span>
+		<span class="img3-5" abs></span>
+		<span class="text3-6" abs>V1.2-新增<span class="mark">文件上传</span></span>
+		<span class="img3-7" abs></span>
+		<span class="text3-8" abs>V1.3-新增<span class="mark">语音传输</span></span>
+		<span class="img3-9" abs></span>
+		<span class="text3-10" abs>V1.4-新增<span class="mark">表情聊天</span></span>
+		<span class="img3-11" abs last></span>
+	</div>
+	<div class="page" hidden>
+		<h1 class="title" abs>在线游戏的尝试——<br><span class="mark">2048</span></h1>
+		<span class="text6-1" abs>2020年12月20日，<span class="mark">Skyzhou</span>成功地搬运了第一个在线游戏：<span class="mark">2048</span></span>
+		<span class="img6-2" abs></span>
+		<span class="text6-3" abs last>这标志着Skyzhou.top<span class="mark">在线游戏建设</span>的开始，让我们一起期待！</span>
+	</div>
+	<div class="page" hidden>
+		<h1 class="title" abs>网站数据</h1>
+		<span class="text4-1" abs>
+			今年内，注册用户数量达到<span class="mark" visit-count></span>个，其中活跃用户（登录次数≧10）有<span class="mark" visit-activeCount></span>个
+		</span>
+		<span class="text4-2" abs>
+			今年内，总共用户访问次数达到<span class="mark" visit-sum></span>个，平均每个人<span class="mark" visit-avg></span>次，平均每天登录用户<span class="mark" visit-yearAvg></span>个
+		</span>
+		<span class="text4-3" abs visit-user last>
+			您今年访问了<span class="mark" visit-userSum></span>次，在用户中排名为<span class="mark" visit-userRank></span>，感谢你的支持！！！
+		</span>
+	</div>
+	<div class="page" hidden>
+		<h1 class="title" abs>Skyzhou寄语</h1>
+		<span class="text7-1" abs>
+			<div class="scroll7-2" last>
+				<p>一年了！</p>
+				<p>365天，虽然不是每个日日夜夜都陪伴着skyzhou.top，但是skyzhou.top在每个日日夜夜都不停的运行着。</p>
+				<p>我从未想过自己能搭建起一个完全属于自己的服务器和网站，首先当然要感谢阿里云给学生党提供的一个机会（虽然这里的“学生”指的是大学生），如果不是原价1700的服务器学生优惠到120，也不会有今天的skyzhou.top。</p>
+				<p>当然，这么多日子里也不是我一个人在做这个网站。skyzhou.top团队的首席前端YuckXi为网站做了无数贡献，我在这里表示感谢！虽然挂着skyzhou的域名，但是不妨碍YuckXi打造了BaiduTop、Chatroom等前端，我很佩服他在js语言的熟练度和F12大法（我们从不做违法的事）。除此之外，YuckXi还写了很多很多的插件，为班里的同学提供了十分多的帮助。“前端无安全”———YuckXi</p>
+				<p>其次，感谢VictorYep和Yuanxungeji等同学对服务器费用的重大贡献，虽然网站名义上没有让大家充值VIP，但是还是有人捐赠，谢谢你们！</p>
+				<p>在制作的过程中，我们也收到了各种同学给予的反馈和建议，我们适度采纳了其中的一部分，并让整个网站更加符合用户想法。最近一段时间里，Yuanxungeji为服务器美化提供了很多宝贵的建议，谢谢！</p>
+				<p>虽然服务器目前“功能基本齐全”，但实际上还有很多很多很多很多问题等待着开发组去解决，除了已经开发完的功能“BaiduTop”、“用户注册系统”，还有正在开发的“Chatroom”（还能更好）、小游戏，以及未来一定一定会出现的全新的主页（现在这个只是临时顶替，因为人手不够）、用户管理系统、用户等级系统、甚至公共blog！不过由于服主以及同学都是初三党，所以时间并没有很多，尤其是Skyzhou本人的成绩也不算好，现在只能将就一下，但是：只要我和同学们有时间，肯定能打造出更好的skyzhou.top!</p>
+				<p>到第二年了呢……</p>
+			</div>
+		</span>
+	</div>
+	<div class="page" hidden>
+		<span class="text5-1" abs>年度报告到此结束！</span>
+		<span class="text5-2" abs>祝各位用户春节快乐！</span>
+		<span class="text5-3" abs>感谢您的访问！</span>
+		<span class="text5-4" abs>-end-</span>
+	</div>
+	<span class="tip" abs hidden>滚动以查看下一页</span>
+	<div class="next" abs hidden>下一页</div>
+	<div class="music">
+		<audio src="./static/res/bgm.mp3" hidden loop></audio>
+		<span class="stopMusic" style="display: none;"></span>
+	</div>
+</body>
+</html>

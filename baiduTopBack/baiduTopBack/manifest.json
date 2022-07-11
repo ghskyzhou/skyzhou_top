@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "BaiduTopBack",
+  "version": "3.1",
+  "description": "background",
+  "icons": {
+      "16": "baidu.png"
+  },
+  "background":{
+    "scripts":[
+      "/js/background.js"
+    ]
+  },
+  "options_page": "/page/option.html",
+  "permissions": [
+    "*://*/*",
+    "background"
+  ]
+}
